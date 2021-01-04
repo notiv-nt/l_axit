@@ -1,0 +1,58 @@
+
+// required
+$main-font-size = 14px
+$transition-prop = '.2s ease-in-out'
+
+
+// variables
+$main-color = #ff8b38
+$second-color = #333
+$font-os = 'Open Sans', sans-serif
+$font-rl = 'Raleway', sans-serif
+
+
+
+toem(fs)
+	return round( unit( fs / $main-font-size , em ), 2 )
+
+
+transit(props...)
+	$str = ''
+
+	for prop in props
+		if prop == props[len(props)-1]
+			$str += prop + ' ' + $transition-prop + ' '
+		else
+			$str += prop + ' ' + $transition-prop + ', '
+
+	transition unquote($str)
+
+
+social(size)
+	text-align center
+
+	a
+		display inline-block
+		width size
+		height size
+		margin 10px
+		font-size (size - 15%)
+		line-height 1.1
+
+		&, & i
+			color inherit
+
+
+divider($color, $offset = 35px, $width = 64px, $centered = false)
+
+	&:after
+		content ''
+		display block
+		width $width
+		height 2px
+		background-color $color
+		if $centered
+			margin $offset auto
+		else
+			margin $offset 0
+

@@ -1,0 +1,251 @@
+
+
+*
+	box-sizing border-box
+
+
+html
+	font $main-font-size/1.4 $font-os
+
+
+
+body
+	background-color #fff
+	color #86878b
+	cursor default
+	-webkit-font-smoothing antialiased
+	min-width 320px
+
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li
+	margin 0
+	padding 0
+
+
+
+h1
+	font-family $font-rl
+	font-size toem(36)
+	color #fff
+	font-weight normal
+	text-transform uppercase
+
+
+h2, h3
+	color #333
+	font-size toem(20)
+
+
+a
+	text-decoration none
+	color inherit
+
+
+.clearfix
+
+	&:after
+		content ""
+		display table
+		height 0
+		width 0
+		clear both
+		visibility hidden
+
+
+img
+	vertical-align top
+
+
+.toggle
+	$color = #fff
+	$thickness = 3px
+
+	background-color transparent
+	border none
+	outline none
+
+	float right
+	width 40px
+	height 27px
+	margin 0
+	display none
+
+	span
+		position relative
+		display block
+
+		&:after,
+		&:before
+			content ""
+			position absolute
+			left 0
+			top -9px
+
+		&:after
+			top 9px
+
+	span, span:after, span:before
+		width 100%
+		height $thickness
+		background-color $color
+		transition all 0.3s
+		backface-visibility hidden
+		border-radius 2px
+
+	/* on activation */
+	&.on span
+		background-color transparent
+
+	&.on span:before
+		transform rotate(45deg) translate(5px, 5px)
+
+	&.on span:after
+		transform rotate(-45deg) translate(7px, -8px)
+
+
+.hidden
+	display none !important
+
+
+.btn
+	display inline-block
+	background none
+	outline none
+	border none
+	text-decoration none
+	color inherit
+	padding 10px 28px
+	color #fff
+
+	&-solid
+		background-color $main-color
+		font-weight 600
+		box-shadow 0 3px 2px rgba(#000, .2)
+		border-radius 4px
+		transit background-color
+
+		&:hover, &:focus
+			background-color darken($main-color, 10%)
+
+	&-outlined
+		border 2px solid #fff
+		overflow hidden
+		position relative
+
+		span
+			position relative
+
+		&:hover, &:focus
+
+			&:before
+				top 0
+
+		&:before
+			content ''
+			position absolute
+			left 0
+			right 0
+			top 100%
+			width 100%
+			height 100%
+			display block
+			background-color rgba(#000, .5)
+			transit top
+
+
+.input
+	$color = #bdbdbd
+
+	background none
+	border none
+	outline none
+	font inherit
+	color $color
+	padding 8px 12px
+	border-bottom 1px solid $color
+	display block
+	width 100%
+	transit border-color
+
+	&:focus
+		border-bottom-color $main-color
+
+	&:-moz-placeholder
+		color $color
+
+	&::-webkit-input-placeholder
+		color $color
+
+
+img.responsive
+	width auto
+	max-width 100%
+
+
+ul.sublist
+	$offset = 70px
+
+	list-style none
+	padding 10px 0
+
+	li
+		@extend .clearfix
+
+		padding 15px 0
+
+		&:hover
+			span.icon
+				background-color $main-color
+				color #fff
+
+	p.title
+		font-weight 600
+		color #212121
+		margin-bottom 5px
+		font-size 1.1em
+
+	span.icon
+		border 2px solid $main-color
+		width 40px
+		height @width
+		border-radius 50%
+		text-align center
+		line-height 35px
+		color $main-color
+		font-size 16px
+		float left
+		margin-right $offset * -1
+		transit color, background-color
+
+	p
+		float left
+		margin-left $offset
+
+
+.box
+	padding 90px 0 80px
+
+
+.box-title
+	text-align center
+	margin-bottom 50px
+
+	h2
+		divider($main-color, 24px, 64px, true)
+
+		font-family $font-rl
+		font-size toem(36)
+		text-transform uppercase
+		font-weight 400
+		line-height 1.2em
+		color #212121
+
+
+
+
+
+
+
+
+
+

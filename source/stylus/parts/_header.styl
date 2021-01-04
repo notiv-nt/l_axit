@@ -1,0 +1,38 @@
+
+.main-header
+	position absolute
+	top 0
+	left 0
+	right 0
+	background-color #000
+	padding 20px 0
+	z-index 10
+	transit padding
+
+	.row
+		position relative
+
+	&.fixed
+		position fixed
+		padding 12px 0
+
+.logo
+	a
+		display inline-block
+		vertical-align middle
+
+.main-nav
+	text-align right
+	margin 0 -7px
+
+	a
+		display inline-block
+		color #fff
+		opacity .7
+		transit opacity
+		padding 7px 9px
+		margin 0 7px
+		vertical-align middle
+
+		&.active, &.current, &:hover
+			opacity 1

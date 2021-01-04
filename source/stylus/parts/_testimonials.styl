@@ -1,0 +1,49 @@
+
+.testimonials
+
+	.row
+		text-align center
+
+	.item
+		text-align left
+		padding 10px 25px
+		max-width 400px
+
+	blockquote
+		background-color #f5f5f5
+		font-style italic
+		color #86878b
+		padding 20px 10px
+		border-radius 4px
+		margin 0
+		position relative
+
+		&:after
+			content ''
+			position absolute
+			bottom -10px
+			left 25px
+			border-top 10px solid #f5f5f5
+			border-left 7px solid transparent
+			border-right @border-left
+
+	.quote-author
+		padding 20px 0
+
+	.author-photo,
+	.author-info
+		vertical-align middle
+
+	.author-photo
+		padding-right 10px
+
+		img
+			width auto
+			max-width 100%
+
+	p.title
+		font-size toem(20)
+		color #333
+		font-weight 700
+
+

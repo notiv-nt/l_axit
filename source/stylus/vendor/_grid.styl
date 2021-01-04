@@ -1,0 +1,98 @@
+
+$grid-count = 12
+$main-padding = 15px
+// $main-font-size = 15px // change fs
+
+$conf = {
+	'xs': { 'min-width': 0, 'row-width': 100% },
+	'sm': { 'min-width': 768px, 'row-width': 750px },
+	'md': { 'min-width': 992px, 'row-width': 970px },
+	'lg': { 'min-width': 1200px, 'row-width': 1170px },
+}
+
+
+.row, .row-fluid
+	font-size 0
+	display table
+	width 100%
+
+
+.row, .row-fluid, .row-block
+	margin-left auto
+	margin-right auto
+
+
+.row-padd
+	padding-left $main-padding
+	padding-right $main-padding
+
+
+.col
+	display inline-block
+	font-size $main-font-size
+	font-size 1rem
+	vertical-align top
+
+	&-mb
+		margin-bottom $main-padding
+
+	&-middle
+		vertical-align middle
+
+	&-top
+		vertical-align top
+
+	&-bottom
+		vertical-align bottom
+
+
+
+grid(name)
+
+	for i in (0..$grid-count)
+
+		if i != 0
+			.{name}-{i}
+				width ( 100% / $grid-count ) * i
+
+		.{name}-pull-{i}
+			right ( 100% / $grid-count ) * i
+
+		.{name}-push-{i}
+			left ( 100% / $grid-count ) * i
+
+		.{name}-offset-{i}
+			margin-left ( 100% / $grid-count ) * i
+
+
+	.{name}-pull-0
+		right 0
+
+	.{name}-push-0
+		left 0
+
+	.{name}-mb
+		margin-bottom $main-padding
+
+	.{name}-offset-0
+		margin-left 0
+
+	.{name}-middle
+		vertical-align middle
+
+	.{name}-top
+		vertical-align top
+
+	.{name}-bottom
+		vertical-align bottom
+
+
+for name in $conf
+	t = $conf[name]
+
+	@media only screen and (min-width: t['min-width'])
+
+		.row, .row-block
+			max-width t['row-width']
+
+		grid(name)

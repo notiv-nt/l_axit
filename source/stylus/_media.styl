@@ -1,0 +1,132 @@
+
+// lg
+// @media screen and (max-width: 1225px)
+
+
+// md
+@media screen and (max-width: 1025px)
+
+	h1
+		font-family $font-rl
+		font-size toem(30)
+		color #fff
+		font-weight normal
+		text-transform uppercase
+
+
+	h2, h3
+		color #333
+		font-size toem(16)
+
+	.tab-nav
+		margin-bottom 20px
+		text-align center
+
+		a
+			display inline-block
+			width auto
+			max-width none
+			padding 13px 20px
+
+	.features-list .image,
+	.features-list .text
+		padding 10px 15px
+
+
+	ul.sublist li
+		padding 5px 0
+
+	ul.sublist p
+		margin-left 50px
+
+	.pricing .item
+		padding 10px 5px
+
+	.testimonials .item
+		padding 10px 15px
+
+	.testimonials p.title
+		font-size 1.2em
+
+
+// sm
+@media screen and (max-width: 769px)
+
+	.brand .social a
+		width 30px
+		height @width
+		font-size @width - 5%
+		margin 5px
+
+	.pricing .item:hover
+		transform scale(1)
+
+
+// xs
+@media screen and (max-width: 641px)
+
+	html
+		font-size 12px
+
+	.xs-mb
+		margin-bottom 25px
+
+	.xs-mb:last-of-type
+		margin-bottom 0
+
+	.tabs-content .tab-item-image
+		text-align center
+
+	.tabs-content .tab-item-text
+		padding-left 0
+
+	.row
+		padding-left 10px
+		padding-right @padding-left
+
+	.toggle
+		display block
+
+	.banner
+		padding 150px 0 50px
+
+	.features-list .image
+		text-align center !important
+		margin-bottom 10px
+
+	.features, .features-list, .box
+		padding 50px 0
+
+	.main-nav
+		text-align center
+		display none
+		position absolute
+		background-color rgba(0, 0, 0, .7)
+		padding 10px 0
+		left 10px
+		right @left
+		width auto
+		top 60px
+		z-index 9
+
+		&.active
+			display block
+
+		a
+			display block
+			padding-top 10px
+			padding-bottom @padding-top
+
+	.process .item
+		padding 5px
+
+		.icon span
+			width 50px
+			line-height @width - 5%
+			height @width
+			font-size 22px
+
+	.box-title h2, .callto h2
+		font-size 2em
+
+
